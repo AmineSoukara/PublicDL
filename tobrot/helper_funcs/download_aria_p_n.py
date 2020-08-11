@@ -270,9 +270,9 @@ async def call_apropriate_function(
     if message_to_send != "":
         mention_req_user = f"<a href='tg://user?id={user_id}'>Your Requested Files</a>\n\n"
         message_to_send = mention_req_user + message_to_send
-        message_to_send = message_to_send + "\n\n" + "#uploads"
+        message_to_send = message_to_send + "\n\n" + "📈 #Series @Damienhelp"
     else:
-        message_to_send = "<i>FAILED</i> to upload files. 😞😞"
+        message_to_send = "<i>FAILED</i> To Upload Files. 😞😞"
     await sent_message_to_update_tg_p.reply_to_message.reply_text(
         text=message_to_send,
         quote=True,
@@ -300,19 +300,19 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                 except:
                     pass
                 #
-                msg = f"\nDownloading File: <code>{downloading_dir_name}</code>"
-                msg += f"\nSpeed: {file.download_speed_string()} 🔽 / {file.upload_speed_string()} 🔼"
-                msg += f"\nProgress: {file.progress_string()}"
-                msg += f"\nTotal Size: {file.total_length_string()}"
+                msg = f"\n📂 <b>Downloading File :</b> \n`{downloading_dir_name}`"
+                msg += f"\n🚀 <b>Speed :</b> {file.download_speed_string()}"
+                msg += f"\n⏳ <b>Progress :</b> {file.progress_string()}"
+                msg += f"\n💾 <b>Total Size :</b> {file.total_length_string()}"
 
                 if file.seeder is None :
-                   msg += f"\n<b>Connections:</b> {file.connections}"
+                   msg += f"\nℹ <b>Connections :</b> {file.connections}"
                 else :
-                   msg += f"\n<b>Info:</b>[ P : {file.connections} || S : {file.num_seeders} ]"
+                   msg += f"\nℹ <b>Info :</b>[ P : {file.connections} || S : {file.num_seeders} ]"
 
-                # msg += f"\nStatus: {file.status}"
-                msg += f"\nETA: {file.eta_string()}"
-                msg += f"\n<code>/cancel {gid}</code>"
+                  #msg += f"\n📊 <b>Status :</b> {file.status}"
+                msg += f"\n⏱ <b>ETA :</b> {file.eta_string()}"
+                msg += f"\n🚫 <code>/cancel {gid}</code>"
                 # LOGGER.info(msg)
                 if msg != previous_message:
                     await event.edit(msg)
@@ -324,7 +324,7 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
             await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
             await check_progress_for_dl(aria2, gid, event, previous_message)
         else:
-            await event.edit(f"File Downloaded Successfully: <code>{file.name}</code>")
+            await event.edit(f"✅ <b>File Downloaded Successfully</b> : <code>{file.name}</code>")
             return True
     except Exception as e:
         LOGGER.info(str(e))
