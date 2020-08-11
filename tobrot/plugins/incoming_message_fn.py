@@ -49,7 +49,7 @@ async def incoming_purge_message_f(client, message):
 
 async def incoming_message_f(client, message):
     """/leech command"""
-    i_m_sefg = await message.reply_text("checking ", quote=True)
+    i_m_sefg = await message.reply_text("⏳ Checking ⏳", quote=True)
     t_, rm_ = await get_markup(message)
     await i_m_sefg.edit_text(
         text=t_,
@@ -60,7 +60,7 @@ async def incoming_message_f(client, message):
 
 async def leech_commandi_f(client, message):
     m_ = await message.reply_text(
-        "checking",
+        "⏳ Checking ⏳",
         quote=True
     )
     m_sgra = " ".join(message.command[1:])
@@ -71,7 +71,7 @@ async def leech_commandi_f(client, message):
     LOGGER.info(dl_url)
     LOGGER.info(cf_name)
     if dl_url is not None:
-        await m_.edit_text("extracting links")
+        await m_.edit_text("💬 Extracting Links")
         # start the aria2c daemon
         aria_i_p = await aria_start()
         LOGGER.info(aria_i_p)
@@ -86,7 +86,7 @@ async def leech_commandi_f(client, message):
             # create download directory, if not exist
             if not os.path.isdir(new_download_location):
                 os.makedirs(new_download_location)
-            await m_.edit_text("trying to download")
+            await m_.edit_text("📥 Trying To Download 📥")
             # try to download the "link"
             sagtus, err_message = await fake_etairporpa_call(
                 aria_i_p,
@@ -114,7 +114,7 @@ async def leech_commandi_f(client, message):
             # create download directory, if not exist
             if not os.path.isdir(new_download_location):
                 os.makedirs(new_download_location)
-            await m_.edit_text("trying to download")
+            await m_.edit_text("📥 Trying To Download 📥")
             # try to download the "link"
             sagtus, err_message = await call_apropriate_function(
                 aria_i_p,
@@ -130,7 +130,7 @@ async def leech_commandi_f(client, message):
 
 async def incoming_youtube_dl_f(client, message):
     """ /ytdl command """
-    i_m_sefg = await message.reply_text("processing", quote=True)
+    i_m_sefg = await message.reply_text("♻️ Processing ♻️", quote=True)
     # LOGGER.info(message)
     # extract link from message
     dl_url, cf_name, yt_dl_user_name, yt_dl_pass_word = await extract_link(
@@ -139,7 +139,7 @@ async def incoming_youtube_dl_f(client, message):
     LOGGER.info(dl_url)
     LOGGER.info(cf_name)
     if dl_url is not None:
-        await i_m_sefg.edit_text("extracting links")
+        await i_m_sefg.edit_text("💬 Extracting Links")
         current_user_id = message.from_user.id
         # create an unique directory
         user_working_dir = os.path.join(DOWNLOAD_LOCATION, str(current_user_id))
@@ -169,6 +169,6 @@ async def incoming_youtube_dl_f(client, message):
             )
     else:
         await i_m_sefg.edit_text(
-            "**FCUK**! wat have you entered. \nPlease read /help \n"
+            "**FUCK**! What Have You Entered. \nPlease Read /help \n"
             f"<b>API Error</b>: {cf_name}"
         )
