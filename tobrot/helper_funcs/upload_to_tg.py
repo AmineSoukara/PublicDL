@@ -51,8 +51,8 @@ async def upload_to_tg(
         caption_str = "<b>"
         caption_str += base_file_name
         caption_str += "</b>"
-        caption_str += "\n\n"
-        caption_str += "● Channel Series : @SeriesBdarija \n● Channel Movies : @MoviesBdarija"
+    #   caption_str += "\n\n"
+    #   caption_str += "● Channel Series : @SeriesBdarija \n● Channel Movies : @MoviesBdarija"
     # caption_str += str(from_user)
     # caption_str += "'>"
     # caption_str += "Here is the file to the link you sent"
