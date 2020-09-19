@@ -24,7 +24,7 @@ class Commandi:
     )
     PURGE = get_config(
         "COMMANDI_PURGE",
-        "purge@SeriesBdarijaRobot"
+        "purge@DamienUserBot"
     )
     YTDL = get_config(
         "COMMANDI_YTDL",
@@ -32,7 +32,7 @@ class Commandi:
     )
     STATUS = get_config(
         "COMMANDI_STATUS",
-        "status@SeriesBdarijaRobot"
+        "status@DamienUserBot"
     )
     CANCEL = get_config(
         "COMMANDI_CANCEL",
@@ -52,15 +52,15 @@ class Commandi:
     )
     HELP = get_config(
         "COMMANDI_HELP",
-        "help@SeriesBdarijaRobot"
+        "help@DamienUserBot"
     )
     SAVETHUMBNAIL = get_config(
         "COMMANDI_SAVETHUMBNAIL",
-        "save@SeriesBdarijaRobot"
+        "save@DamienUserBot"
     )
     CLEARTHUMBNAIL = get_config(
         "COMMANDI_CLEARTHUMBNAIL",
-        "clear@SeriesBdarijaRobot"
+        "clear@DamienUserBot"
     )
     GET_RCLONE_CONF_URI = get_config(
         "COMMANDI_GET_RCLONE_CONF_URI",
@@ -68,5 +68,5 @@ class Commandi:
     )
     UPLOAD_LOG_FILE = get_config(
         "COMMANDI_UPLOAD_LOG_FILE",
-        "log@SeriesBdarijaRobot"
+        "log@DamienUserBot"
     )
